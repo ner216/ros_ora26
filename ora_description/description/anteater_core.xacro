@@ -53,6 +53,6 @@
   </link>
 
   <gazebo reference="chassis_link">
-    <material>Gazebo/White</material>
+    <material name="white"/>
   </gazebo>
 </robot>

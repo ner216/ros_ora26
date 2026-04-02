@@ -31,7 +31,7 @@
     </link>
         
     <gazebo reference="${prefix}_wheel_link">
-      <material>Gazebo/Black</material>
+      <material name="black"/>
     </gazebo>
   </xacro:macro>
 
