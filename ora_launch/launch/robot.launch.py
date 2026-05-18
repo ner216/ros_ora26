@@ -176,15 +176,12 @@ def generate_launch_description():
   edge_detection_node = Node(
     package='ora_edge_detection',
     executable='edge_detection',
-    name='ora_edge_detection'
-  )
-
-  # Rotates frame such that the Robot X axis is aligned with image Z axis
-  optical_tf_node = Node(
-    package='tf2_ros',
-    executable='static_transform_publisher',
-    name='camera_optical_frame_publisher',
-    arguments=['0', '0', '0', '-1.5708', '0', '-1.5708', 'camera_link', 'camera_link_optical']
+    name='ora_edge_detection',
+    parameters=[
+      {
+        'use_sim_time': use_sim_time
+      }
+    ]
   )
 
   ####################
@@ -293,7 +290,6 @@ def generate_launch_description():
 
     # Edge/line detection
     edge_detection_node,
-    optical_tf_node,
 
     # Prerequisite Nodes
     filter_prereq_node,
